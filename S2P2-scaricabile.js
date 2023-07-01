@@ -34,31 +34,42 @@ const amy = {
   isAmbassador: false,
 };
 
-
+//inizializazione degli array
 const ambassador = [];
 const clienti = [];
 
-ambassador.push(marco);
+// Inseriamo oggetti nell'array
 clienti.push(amy,paul,marco)
 
-
-const prices = [99, 5, 2];
+const prices = [140 , 5, 2];
 const shippingCost = 50;
-let utenteCheEffettuaLAcquisto = amy; //cambia il valore qui per provare se il tuo algoritmo funziona!
+let utenteCheEffettuaLAcquisto = marco; //cambia il valore qui per provare se il tuo algoritmo funziona!
 
+//Inizializziamo due nuove variabili per il totale del carrello e lo sconto
 let totalShoppingCart = 0;
-let isAmbassador = false;
 let priceWithDiscount;
 
+// inseriamo tutti i client con isAmbassard===true nel array proprio
+for(let i=0;i<clienti.length;i++){
+  if(clienti[i].isAmbassador){
+    ambassador.push(clienti[i])
+  }
+}
 
+//Stampa dei nomi dei clienti
 for(let i=0;i<clienti.length;i++){
   console.log("Nome utente : "+clienti[i].name+" Cognome utente : "+clienti[i].lastName+" E ambassador : "+clienti[i].isAmbassador)
 }
 
+// totale del carrello
 for (let i = 0; i < prices.length; i++) {
   totalShoppingCart += prices[i];
 }
+
+//sconto del carrello
 priceWithDiscount=(totalShoppingCart * 0.7)
+
+//controllo per vedere se ha o meno lo sconto il cliente
 if(utenteCheEffettuaLAcquisto.isAmbassador  && priceWithDiscount >=100){
   console.log("Prezzo complessivo di spedizione  inclusa e : "+priceWithDiscount)
 }else if(utenteCheEffettuaLAcquisto.isAmbassador && priceWithDiscount <=100){
