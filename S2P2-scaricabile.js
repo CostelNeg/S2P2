@@ -41,6 +41,7 @@ const clienti = [];
 // Inseriamo oggetti nell'array
 clienti.push(amy,paul,marco)
 
+
 const prices = [140 , 5, 2];
 const shippingCost = 50;
 let utenteCheEffettuaLAcquisto = marco; //cambia il valore qui per provare se il tuo algoritmo funziona!
